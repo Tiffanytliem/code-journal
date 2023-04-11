@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 765px) {
+  body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: #292929;
+    background-color: #f0f0f0;
+    height: 848px;
+  }
+
+  .container > h5 {
+    font-family: "Proza Libre", sans-serif;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  header > .container {
+    position: absolute;
+    background-color: #562b81;
+    width: 100%;
+    height: 53px;
+    left: 0;
+    top: 0;
+  }
+
+  main > .container {
+    position: absolute;
+    left: 0;
+    width: 375px;
+    height: 795px;
+  }
+
+  h2 {
+    margin-top: 69px;
+    font-family: "Proza Libre", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  form {
+    position: absolute;
+  }
+
+  .entry-form {
+    position: absolute;
+    left: 0;
+    margin: 16px;
+  }
+
+  .image {
+    width: 341px;
+    height: 245px;
+  }
+
+  #title,
+  #photourl,
+  #notes {
+    position: absolute;
+    width: 341px;
+    height: 40px;
+    border: 1px solid #b6b6b6;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 22px;
+    text-align: top;
+  }
+
+  #title {
+    top: 426px;
+  }
+
+  #photourl {
+    top: 527px;
+  }
+
+  #notes {
+    top: 623px;
+    height: 149px;
+  }
+
+  #title:focus {
+    border-color: #562b81;
+  }
+
+  #save {
+    position: absolute;
+    top: 794px;
+    right: 0;
+    width: 72px;
+    height: 32px;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    font-size: 16px;
+    background-color: #562b81;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .title,
+  .photourl,
+  .notes {
+    position: absolute;
+    font-family: "Proza Libre", sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+  }
+
+  .title {
+    top: 395px;
+  }
+
+  .photourl {
+    top: 496px;
+  }
+
+  .notes {
+    top: 592px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: #292929;
+    background-color: #f0f0f0;
+  }
+
+  header {
+    position: absolute;
+    width: 100%;
+    height: 53px;
+    left: 0;
+    top: 0;
+    background-color: #562b81;
+  }
+
+  .container > h5 {
+    font-family: "Proza Libre", sans-serif;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 13px;
+  }
+
+  .container {
+    position: absolute;
+    left: 365px;
+    width: 710px;
+    padding-left: 0;
+  }
+
+  h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Proza Libre", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  .entry-form {
+    position: absolute;
+    top: 53px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .image {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 345px;
+    height: 340px;
+  }
+
+  #title,
+  #photourl,
+  #notes {
+    position: absolute;
+    left: 0;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #b6b6b6;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 22px;
+    text-align: top;
+  }
+
+  #title {
+    top: 111px;
+    left: 365px;
+  }
+
+  #photourl {
+    top: 212px;
+    left: 365px;
+  }
+
+  #notes {
+    top: 481px;
+    left: 0;
+    height: 149px;
+    width: 710px;
+  }
+
+  #save {
+    position: absolute;
+    top: 653px;
+    left: 638px;
+    width: 72px;
+    height: 32px;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    font-size: 16px;
+    background-color: #562b81;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .title,
+  .photourl,
+  .notes {
+    position: absolute;
+    font-family: "Proza Libre", sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    padding-left: 0;
+  }
+
+  .title {
+    top: 80px;
+    left: 365px;
+  }
+
+  .photourl {
+    top: 181px;
+    left: 365px;
+  }
+
+  .notes {
+    position: absolute;
+    top: 450px;
+    left: 0;
+  }
+}
