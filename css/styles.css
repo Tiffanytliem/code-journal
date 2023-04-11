@@ -2,8 +2,9 @@
   box-sizing: border-box;
 }
 
-input:focus {
-  border: 2px solid #562b81;
+input:focus,
+textarea:focus {
+  outline: 1px solid #562b81;
 }
 
 @media screen and (max-width: 768px) {
