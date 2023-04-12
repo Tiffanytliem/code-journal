@@ -1,3 +1,71 @@
+function viewSwap(viewName) {
+  const $view = document.querySelector('[data-view=' + viewName + ']');
+  $view.className = 'view';
+  data.view = viewName;
+  if (viewName === 'entry-form') {
+    document.querySelector('[data-view="entries"]').className = 'view hidden';
+  } else {
+    document.querySelector('[data-view="entry-form"]').className = 'view hidden';
+  }
+}
+
+const $h6 = document.querySelector('.h6');
+$h6.addEventListener('click', function (e) {
+  if (e.target.matches('.entries')) {
+    viewSwap('entries');
+  } else if (e.target.matches('.entry-form')) {
+    viewSwap('entry-form');
+  }
+});
+
+const $newButton = document.querySelector('#new');
+$newButton.addEventListener('click', function (e) {
+  if (e.target.matches('.entries')) {
+    viewSwap('entries');
+  } else if (e.target.matches('.entry-form')) {
+    viewSwap('entry-form');
+  }
+});
+
+function toggleNoEntries(boolean) {
+  const $ul = document.querySelector('ul');
+  const $noEntries = document.querySelector('.no-entries');
+  if (boolean === true) {
+    $ul.className = 'container hidden';
+    $noEntries.className = 'no-entries';
+  } else {
+    $ul.className = 'container';
+    $noEntries.className = 'no-entries hidden';
+  }
+}
+
+function renderEntry(entry) {
+  const li = document.createElement('li');
+  li.setAttribute('class', 'row');
+  const firstDiv = document.createElement('div');
+  firstDiv.setAttribute('class', 'column-half');
+  li.appendChild(firstDiv);
+  const img = document.createElement('img');
+  img.setAttribute('class', 'image');
+  img.setAttribute('src', entry.photoURL);
+  firstDiv.appendChild(img);
+  const secondDiv = document.createElement('div');
+  secondDiv.setAttribute('class', 'column-half');
+  li.appendChild(secondDiv);
+  const h3 = document.createElement('h3');
+  const h3Text = document.createTextNode(entry.title);
+  h3.appendChild(h3Text);
+  secondDiv.appendChild(h3);
+  const p = document.createElement('p');
+  const pText = document.createTextNode(entry.notes);
+  p.appendChild(pText);
+  secondDiv.appendChild(p);
+  const br = document.createElement('br');
+  secondDiv.appendChild(br);
+  secondDiv.appendChild(br);
+  return li;
+}
+
 const $photoURL = document.querySelector('#photourl');
 const $img = document.querySelector('img');
 $photoURL.addEventListener('input', function (event) {
@@ -18,34 +86,22 @@ $form.addEventListener('submit', function (event) {
   data.entries.unshift(entry);
   $img.setAttribute('src', '../images/placeholder-image-square.jpg');
   $form.reset();
+  const $ul = document.querySelector('ul');
+  $ul.prepend(renderEntry(entry));
+  viewSwap('entries');
+  toggleNoEntries(false);
 });
-
-function renderEntry(entry) {
-  const li = document.createElement('li');
-  li.setAttribute('class', 'column-half');
-  const firstDiv = document.createElement('div');
-  firstDiv.setAttribute('class', 'column-half');
-  li.appendChild(firstDiv);
-  const img = document.createElement('img');
-  img.setAttribute('class', 'image');
-  img.setAttribute('src', entry.photoURL);
-  firstDiv.appendChild(img);
-  const secondDiv = document.createElement('div');
-  secondDiv.setAttribute('class', 'column-half');
-  li.appendChild(secondDiv);
-  const h3 = document.createElement('h3');
-  h3.createTextNode(entry.title);
-  secondDiv.appendChild(h3);
-  const p = document.createElement('p');
-  p.createTextNode(entry.notes);
-  secondDiv.appendChild(p);
-  return li;
-}
 
 document.addEventListener('DOMContentLoaded', function (e) {
   const $ul = document.querySelector('ul');
   for (let i = 0; i < data.entries.length; i++) {
     $ul.appendChild(renderEntry(data.entries[i]));
+  }
+  viewSwap('entries');
+  if (data.entries.length === 0) {
+    toggleNoEntries(true);
+  } else {
+    toggleNoEntries(false);
   }
 }
 );
