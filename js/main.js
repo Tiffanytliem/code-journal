@@ -42,6 +42,7 @@ function toggleNoEntries(boolean) {
 function renderEntry(entry) {
   const li = document.createElement('li');
   li.setAttribute('class', 'row');
+  li.setAttribute('data-entry-id', entry.entryID);
   const firstDiv = document.createElement('div');
   firstDiv.setAttribute('class', 'column-half');
   li.appendChild(firstDiv);
@@ -56,6 +57,10 @@ function renderEntry(entry) {
   const h3Text = document.createTextNode(entry.title);
   h3.appendChild(h3Text);
   secondDiv.appendChild(h3);
+  const pencilIcon = document.createElement('i');
+  pencilIcon.setAttribute('class', 'fa-solid fa-pencil fa-xl');
+  pencilIcon.setAttribute('style', 'color: #562b81;');
+  secondDiv.appendChild(pencilIcon);
   const p = document.createElement('p');
   const pText = document.createTextNode(entry.notes);
   p.appendChild(pText);
