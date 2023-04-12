@@ -23,13 +23,16 @@
 </head>
 <body>
   <header>
+    <div class="container hidden">
+      <p class="h5">Code Journal</p>
+    </div>
     <div class="container">
-      <h5>Code Journal</h5>
-
+      <p class="h5">Code Journal</p>
+      <p class="h6">Entries</p>
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form" class="entry-form">
+    <div data-view="entry-form" class="entry-form hidden">
       <form>
         <h2>New Entry</h2>
         <img class="image" src="images/placeholder-image-square.jpg"><br>
@@ -42,7 +45,44 @@
         <button type="submit" id="save">SAVE</button><br><br>
       </form>
     </div>
-    <div data-view="entries" class="hidden"></div>
+    <div data-view="entries" class="entries">
+      <div class="row">
+        <div class="column-full">
+          <h2>Entries</h2>
+        </div>
+      </div>
+      <ul class="container">
+        <li class="row">
+          <div class="column-half">
+            <img class="image" src="images/placeholder-image-square.jpg">
+          </div>
+          <div class="column-half">
+            <h3 class="entries-title">Ada Lovelace</h3>
+            <p class="entries-notes">Augusta Ada King, Countess of Lovelace was an English mathematician and writer, chiefly known for her work on Charles
+            Babbage's proposed mechanical general-purpose computer, the Analytical Engine.<br><br>She was the first to recognize that the
+            machine had applications beyond pure calculation, and to have published the first algorithm intended to be carried out
+            by such a machine.</p>
+            <br><br>
+          </div>
+        </li>
+        <li class="row">
+          <div class="column-half">
+            <img class="image column-half" src="images/placeholder-image-square.jpg">
+          </div>
+          <div class="column-half">
+            <h3 class="entriesTitle">Ada Lovelace</h3>
+            <p class="entrieNotes">Augusta Ada King, Countess of Lovelace was an English mathematician and writer, chiefly known for her work on
+            Charles
+            Babbage's proposed mechanical general-purpose computer, the Analytical Engine.She was the first to recognize that
+            the
+            machine had applications beyond pure calculation, and to have published the first algorithm intended to be carried
+            out
+            by such a machine.</p>
+            <br><br>
+          </div>
+        </li>
+      </ul>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

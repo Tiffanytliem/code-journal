@@ -15,6 +15,7 @@ textarea:focus {
     color: #292929;
     background-color: #f0f0f0;
     height: 848px;
+    font-size: 16px;
   }
 
   header > .container {
@@ -29,7 +30,7 @@ textarea:focus {
     justify-content: center;
   }
 
-  .container > h5 {
+  .h5 {
     position: absolute;
     font-family: "Proza Libre", sans-serif;
     color: white;
@@ -37,6 +38,16 @@ textarea:focus {
     font-size: 20px;
     margin-top: 15px;
     width: 341px;
+  }
+
+  .h6 {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 16px;
+    text-align: center;
+    color: #fff;
   }
 
   main > .container {
@@ -135,6 +146,47 @@ textarea:focus {
   .notes {
     top: 592px;
   }
+
+  .entries {
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 341px;
+  }
+
+  .entries > .container {
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 341px;
+  }
+
+  .row {
+    justify-content: center;
+  }
+
+  .entries > .image {
+    margin: auto;
+  }
+
+  h3 {
+    font-family: "Proza Libre", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    width: 329px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -156,16 +208,29 @@ textarea:focus {
     background-color: #562b81;
   }
 
-  .container > h5 {
+  .h5 {
     font-family: "Proza Libre", sans-serif;
     color: white;
     font-weight: 400;
     font-size: 20px;
     margin-top: 13px;
+    width: 123px;
+    height: 27px;
+  }
+
+  .h6 {
+    position: absolute;
+    top: 0;
+    left: 141px;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
   }
 
   .container {
     position: absolute;
+    top: 0;
     left: 365px;
     width: 710px;
     padding-left: 0;
@@ -180,7 +245,8 @@ textarea:focus {
     font-size: 30px;
   }
 
-  .entry-form {
+  .entry-form,
+  .entries {
     position: absolute;
     top: 53px;
     left: 0;
@@ -196,7 +262,7 @@ textarea:focus {
     bottom: 0;
   }
 
-  .image {
+  form > .image {
     position: absolute;
     top: 80px;
     left: 0;
@@ -274,5 +340,57 @@ textarea:focus {
     position: absolute;
     top: 450px;
     left: 0;
+  }
+
+  .entries {
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 710px;
+  }
+
+  .entries > .container {
+    margin: 0 auto;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 710px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 710px;
+    align-items: flex-start;
+  }
+
+  .column-half {
+    flex-basis: 45%;
+  }
+
+  .column-half > .image {
+    width: 345px;
+    height: 340px;
+  }
+
+  h3 {
+    font-family: "Proza Libre", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 0;
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    width: 329px;
   }
 }
