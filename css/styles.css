@@ -11,6 +11,14 @@ body {
   font-size: 16px;
 }
 
+i {
+  z-index: 10;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
 p {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
