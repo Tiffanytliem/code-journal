@@ -31,12 +31,12 @@
   <main class="container">
     <div data-view="entry-form" class="view hidden">
       <form>
-        <h2>New Entry</h2>
+        <h2 class="new-entry">New Entry</h2><h2 class="edit-entry hidden">Edit Entry</h2>
         <img class="image" src="images/placeholder-image-square.jpg"><br>
         <label for="title" class="title">Title</label><br>
-        <input type="text" id="title" required><br>
+        <input type="text" id="title" value="" required><br>
         <label for="photourl" class="photourl">Photo URL</label><br>
-        <input type="url" id="photourl" required><br>
+        <input type="url" id="photourl" value="" required><br>
         <label for="notes" class="notes">Notes</label><br>
         <textarea id="notes" rows="6" required></textarea><br>
         <button type="submit" id="save">SAVE</button><br><br>
@@ -45,7 +45,7 @@
     <div data-view="entries" class="view">
       <div class="row">
         <div class="column-full">
-          <h2>Entries</h2>
+          <h2 class="view-entries">Entries</h2><h2 class="edit-entry hidden">Edit Entry</h2>
           <button type="button" id="new" class="entry-form">NEW</button>
         </div>
       </div>
