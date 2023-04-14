@@ -20,16 +20,13 @@ $h6.addEventListener('click', function (e) {
 
 const $newButton = document.querySelector('#new');
 $newButton.addEventListener('click', function (e) {
-  // if (e.target.matches('.entries')) {
-  // viewSwap('entries');
-  // } else if (e.target.matches('.entry-form')) {
-
   viewSwap('entry-form');
   document.querySelector('.new-entry').className = 'new-entry';
   document.querySelector('.edit-entry').className = 'edit-entry hidden';
+  $deleteButton.className = 'delete-button hidden';
+  $deleteModal.className = 'delete-modal hidden';
   $img.setAttribute('src', '../images/placeholder-image-square.jpg');
   $form.reset();
-  // }
 });
 
 const $ul = document.querySelector('ul');
@@ -141,6 +138,7 @@ $ul.addEventListener('click', function (e) {
     viewSwap('entry-form');
     document.querySelector('.new-entry').className = 'new-entry hidden';
     document.querySelector('.edit-entry').className = 'edit-entry';
+    $deleteButton.className = 'delete-button';
     for (let i = 0; i < data.entries.length; i++) {
       if (Number(e.target.closest('[data-entry-id]').getAttribute('data-entry-id')) === data.entries[i].entryID) {
         data.editing = {};
@@ -151,5 +149,28 @@ $ul.addEventListener('click', function (e) {
     document.querySelector('#title').value = data.editing.title;
     document.querySelector('#photourl').value = data.editing.photoURL;
     document.querySelector('#notes').value = data.editing.notes;
-  }
+
+    $form.addEventListener('click', function (event) {
+      if (event.target.className === 'delete-button') {
+        viewSwap('entry-form');
+        $deleteModal.className = 'delete-modal';
+      }
+      if (event.target.className === 'delete-cancel') {
+        $deleteModal.className = 'delete-modal hidden';
+      } else if (event.target.className === 'delete-confirm') {
+        for (let i = 0; i < data.entries.length; i++) {
+          if (Number(e.target.closest('[data-entry-id]').getAttribute('data-entry-id')) === data.entries[i].entryID) {
+            data.entries.splice(i, 1);
+          }
+        } e.target.closest('[data-entry-id]').remove();
+        $deleteModal.className = 'delete-modal hidden';
+        viewSwap('entries');
+      }
+    });
+  } else {
+    $deleteButton.className = 'delete-button hidden';
+  } $deleteModal.className = 'delete-modal hidden';
 });
+
+const $deleteButton = document.querySelector('.delete-button');
+const $deleteModal = document.querySelector('.delete-modal');
