@@ -107,6 +107,25 @@ button {
   margin: 80px auto;
 }
 
+.delete-modal {
+  position: absolute;
+  top: calc((100vh - 131px)/2);
+  width: 319px;
+  height: 131px;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.delete-modal > p {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
+
 @media screen and (max-width: 767px) {
   header > .container {
     position: absolute;
@@ -392,5 +411,10 @@ button {
   #new {
     left: 662px;
     top: 26px;
+  }
+
+  .delete-button {
+    position: relative;
+    top: 500px;
   }
 }
